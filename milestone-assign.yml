@@ -11,7 +11,6 @@ concurrency:
 jobs:
   assign_milestone:
     if: false
-    name: Add milestone
     permissions:
       issues: write
       pull-requests: write
@@ -25,7 +24,6 @@ jobs:
       - name: Install Octokit
         run: npm --prefix .github/workflows/scripts install @octokit/action
 
-      - name: Assign milestones
         id: check
         run: node .github/workflows/scripts/milestone-assigner.js
         env:
